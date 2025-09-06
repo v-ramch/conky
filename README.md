@@ -1,0 +1,2 @@
+# nowplaying
+a spotify display
