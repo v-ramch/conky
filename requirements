@@ -1,0 +1,40 @@
+# Essential packages
+conky-all lua5.3
+
+# Image processing
+imagemagick
+webp libjpeg-turbo-progs libpng-progs
+
+# File type detection
+file
+
+# Networking tools
+wget
+
+# JSON parsing (for Last.fm API)
+jq
+
+# Playerctl for media player control
+playerctl
+
+# Cairo bindings for Lua
+lua-cairo
+
+# Imlib2 for image processing
+lua-imlib2
+
+# Additional Lua development packages
+liblua5.3-dev
+
+# Additional image format support
+libimage-exiftool-perl
+
+# Better webp support
+webp
+
+# Additional font support
+fonts-noto fonts-roboto
+
+# Audio tools (optional)
+pulseaudio-utils
+
