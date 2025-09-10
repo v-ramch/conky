@@ -1,0 +1,65 @@
+conky.config = {
+    background = true,
+
+    -- Xft font settings (for default text)
+    use_xft = true,
+    font = 'DejaVu Sans Mono:size=10',
+    xftalpha = 0.8,
+    override_utf8_locale = true,
+
+    -- Update interval in seconds
+    update_interval = 1,
+
+    -- Conky window settings
+    own_window = true,
+    own_window_class = 'conky',
+    own_window_type = 'desktop',
+    own_window_transparent = false,
+    own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+    double_buffer = true,
+
+    own_window_argb_visual = true,
+    own_window_argb_value = 0,
+    stippled_borders = 0,
+    double_buffer = true,    
+    minimum_width = 330,
+    maximum_width = 330,
+    minimum_height = 40,
+
+    draw_borders = false,
+    draw_outline = false,
+    draw_shades = false,
+    draw_graph_borders = true,
+
+    default_color = 'white',
+    default_shade_color = 'black',
+    default_outline_color = 'black',
+
+    alignment = 'middle_left',
+    gap_x = 35,
+    gap_y = -5,
+
+    use_spacer = 'none',
+
+    -- Load Lua script
+    lua_load = '~/.conky/nowplaying/lua/now_playing.lua',
+    
+};
+
+conky.text = [[
+${if_running spotify}${lua conky_draw_border_with_shade_hex}
+#${voffset 5}${goto 15}${color #ADD8E6}${font Michroma:bold:size=8}NOW PLAYING $font
+${voffset 20}${goto 135}${color #5eb5d1}${font Michroma:bold:size=9}${lua conky_get_song_artist}
+${voffset 0}${goto 135}${color #e9c885}${font Manjari:bold:size=10}${lua conky_get_song_album}
+${voffset -3}${goto 135}${color #e9c885e}${font Zekton:bold:size=12}${lua conky_get_song_title}$color
+${lua_parse conky_image /home/vramch/.conky/nowplaying/images/spotify.png 15 45 100 100 45}
+#${lua conky_draw_border_with_shade_buttons}
+${lua conky_draw_image_border}
+${lua conky_draw_song_progress}
+${lua conky_volume_bar_vertical}
+#${color #197fbf}${font Symbola:size=10}${lua conky_get_volume_bar}
+${lua_parse conky_image /home/vramch/.conky/nowplaying/lua/buttons/volume1.png 200 129 18 18 0}
+
+$endif
+]];
+
