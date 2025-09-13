@@ -69,15 +69,11 @@ function app:on_activate()
         button:move(x, y)
         button:set_app_paintable(true)
 
-        -- Set window to appear on all desktops
-        button:set_type_hint(Gdk.WindowTypeHint.DESKTOP)
-
-        -- Set window to stay below other windows
-        button:set_keep_below(true)
-
-        -- Prevent taskbar entries
-        button:set_skip_taskbar_hint(true)
-        button:set_skip_pager_hint(true)  -- Also hide from pager (task switcher)
+	-- prevent taskbar entries
+	button:set_skip_taskbar_hint(true)
+	button:set_keep_below(true)   -- stay under other windows
+	button:set_accept_focus(false)
+	button:set_type_hint(Gdk.WindowTypeHint.DOCK)
 
         -- Ensure proper transparency handling
         local screen = button:get_screen()
@@ -142,16 +138,12 @@ function app:on_activate()
         button:move(x, y)
         button:set_app_paintable(true)
 
-        -- Set window to appear on all desktops
-        button:set_type_hint(Gdk.WindowTypeHint.DESKTOP)
-
-        -- Set window to stay below other windows
-        button:set_keep_below(true)
-
-        -- Prevent taskbar entries
-        button:set_skip_taskbar_hint(true)
-        button:set_skip_pager_hint(true)  -- Also hide from pager (task switcher)
-
+	-- prevent taskbar entries
+	button:set_skip_taskbar_hint(true)
+	button:set_keep_below(true)   -- stay under other windows
+	button:set_accept_focus(false)
+	button:set_type_hint(Gdk.WindowTypeHint.DOCK)
+	
         -- Ensure proper transparency handling
         local screen = button:get_screen()
         local visual = screen:get_rgba_visual()
