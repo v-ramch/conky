@@ -69,9 +69,15 @@ function app:on_activate()
         button:move(x, y)
         button:set_app_paintable(true)
 
-	-- prevent taskbar entries
-	button:set_skip_taskbar_hint(true)
-	button:set_keep_above(true)   -- optional, keeps above other windows
+        -- Set window to appear on all desktops
+        button:set_type_hint(Gdk.WindowTypeHint.DESKTOP)
+
+        -- Set window to stay below other windows
+        button:set_keep_below(true)
+
+        -- Prevent taskbar entries
+        button:set_skip_taskbar_hint(true)
+        button:set_skip_pager_hint(true)  -- Also hide from pager (task switcher)
 
         -- Ensure proper transparency handling
         local screen = button:get_screen()
@@ -136,9 +142,15 @@ function app:on_activate()
         button:move(x, y)
         button:set_app_paintable(true)
 
-	-- prevent taskbar entries
-	button:set_skip_taskbar_hint(true)
-	button:set_keep_above(true)   -- optional, keeps above other windows
+        -- Set window to appear on all desktops
+        button:set_type_hint(Gdk.WindowTypeHint.DESKTOP)
+
+        -- Set window to stay below other windows
+        button:set_keep_below(true)
+
+        -- Prevent taskbar entries
+        button:set_skip_taskbar_hint(true)
+        button:set_skip_pager_hint(true)  -- Also hide from pager (task switcher)
 
         -- Ensure proper transparency handling
         local screen = button:get_screen()
