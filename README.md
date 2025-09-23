@@ -19,4 +19,10 @@ libgdk3.0-cil-dev
 libglib2.0-dev
 
 lua-lgi
+
+imagemagick
+
+file
+
+wget
    
