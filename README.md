@@ -4,7 +4,7 @@ A spotify display using lua and conky
 ![alt text](https://i.imgur.com/2kiOkDr.png)
 
 ### Requirements
-[[Conky]([url](https://github.com/brndnmtthws/conky))]
+[Conky] (https://github.com/brndnmtthws/conky)
 
 Lua 5.3
 
